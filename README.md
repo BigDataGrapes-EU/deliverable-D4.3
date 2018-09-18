@@ -1,9 +1,9 @@
 
-# How to use the Big-Data-Grape Workbench
+# How to use the Big-Data-Grape
 
 To start the BDG components:
 ```
-    bash start-components.sh
+    bash run-components.sh
 ```
 
 ## Interfaces
