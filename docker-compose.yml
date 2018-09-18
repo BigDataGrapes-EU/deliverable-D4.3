@@ -1,0 +1,72 @@
+version: '2' 
+services:
+  
+  namenode:
+    build: ./components/namenode
+    container_name: namenode
+    volumes:
+      - ./volume-data/namenode:/hadoop/dfs/name
+    environment:
+      - CLUSTER_NAME=bigdatagrapescluster
+    env_file:
+      - ./config/hadoop.env
+    ports:
+      - 50070:50070
+      - 8020:8020
+  
+  datanode1:
+    build: ./components/datanode
+    container_name: datanode1
+    depends_on: 
+      - namenode
+    volumes:
+      - ./volume-data/datanode1:/hadoop/dfs/data
+    env_file:
+      - ./config/hadoop.env
+    ports:
+      - 50075:50075
+  
+  datanode2:
+    build: ./components/datanode
+    container_name: datanode2
+    depends_on: 
+      - namenode
+    volumes:
+      - ./volume-data/datanode2:/hadoop/dfs/data
+    env_file:
+      - ./config/hadoop.env
+    ports:
+      - 50076:50075
+
+  spark-master:
+    build: ./components/spark-master-notebook
+    container_name: spark-master
+    volumes:
+      - ./volume-data/spark-master-notebook/notebooks:/notebooks
+      - ./volume-data/spark-master-notebook/datasets:/datasets
+    ports:
+      - 8080:8080
+      - 7077:7077
+      - 9999:9999
+    env_file:
+      - ./config/hadoop.env
+
+  spark-worker:
+    build: ./components/spark-worker
+    container_name: spark-worker
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+    ports:
+      - 8081:8081
+    env_file:
+      - ./config/hadoop.env
+
+  hue:
+    build: ./components/hue
+    container_name: hue
+    ports:
+      - 8088:8088
+    environment:
+      - NAMENODE_HOST=namenode
