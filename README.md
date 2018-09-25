@@ -30,7 +30,7 @@ Finally, to execute the demonstrators, run the following Bash command:
 $ ./run-jupyter_notebooks.sh
 ```
 
-The Bash script above starts the Jupyter notebooks for predictive data analytics using the BigDataGrapes platform. To run the demonstrators, the user should point her browser to the following Jupyter Notebook URL: http://<server_address>:9999
+The Bash script above starts the Jupyter notebooks for predictive data analytics using the BigDataGrapes platform. To run the demonstrators, the user should point her browser to the following Jupyter Notebook URL: http://SERVER_URL:9999
 
 The password used to protect the Jupyter Notebook instance is “bigdatagrapes”.
 
