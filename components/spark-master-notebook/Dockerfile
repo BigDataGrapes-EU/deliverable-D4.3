@@ -17,8 +17,8 @@ RUN easy_install pip && pip install jupyter && jupyter notebook --generate-confi
 COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 
 # install pyspark
-RUN pip tensorflow
-RUN pip install pyspark findspark numpy matplotlib pydoop scipy pandas pickle tqdm seaborn sklearn keras plotly flask
+RUN pip install tensorflow
+RUN pip install pyspark findspark numpy matplotlib pydoop scipy pandas tqdm seaborn sklearn keras plotly flask
 
 # export PATH=/spark/bin/:$PATH
 ENV PATH /spark/bin/:$PATH
