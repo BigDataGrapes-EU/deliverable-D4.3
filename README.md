@@ -24,9 +24,14 @@ The repository contains three Jupyter Notebooks and a Bash shell script that sho
 $ ./run-components.sh
 ```
 
-The Bash script above downloads the Docker images and builds the environment according to the predefined configuration settings. The Bash script also starts the Docker containers of the BigDataGrapes software stack components.
+The Bash script above downloads the Docker images and builds the environment according to the predefined configuration settings. The Bash script also starts the Docker containers of the BigDataGrapes software stack components. 
+Execute the command bellow to check if the BigDataGrape docker containers have started prolerly. 
 
-Finally, to execute the demonstrators, run the following Bash command:  
+```
+$ docker ps 
+```
+
+At this point, you should have the docker containers running. To execute the demonstrators, run the following Bash command:  
 
 ```
 $ ./run-jupyter_notebooks.sh
@@ -43,6 +48,7 @@ After a successful login the user can open the files below:
 * D4.3-WineDataAnalysis-FlavorsTastes-PredictionUserRating.ipynb (for this Jupyter notebook we also made available an HTML version embedding all plots together.)
 
 The execution of the code can be done by running each cell from the beginning to the end of each notebook and wait for the result.
+
 
 ## Useful BigDataGrapes Endpoints
 

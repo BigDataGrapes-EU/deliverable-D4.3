@@ -1,15 +1,15 @@
-FROM bde2020/spark-worker:2.1.0-hadoop2.8-hive-java8
+FROM gettyimages/spark:2.3.1-hadoop-3.0
 
 # install python essencials
+RUN apt-get update && apt-get install -y python-setuptools python-dev build-essential
+RUN apt-get install ssh procps nano wget git -y
 RUN apt-get update && apt-get install -y python-setuptools python-dev build-essential
 
 # install pip and jupyter
 RUN easy_install pip && pip install jupyter
 
 # install pyspark
-RUN pip install pyspark
-RUN pip install findspark
-RUN pip install numpy
-RUN pip install matplotlib
+RUN pip install pyspark findspark numpy matplotlib
 
 EXPOSE 8081
+
