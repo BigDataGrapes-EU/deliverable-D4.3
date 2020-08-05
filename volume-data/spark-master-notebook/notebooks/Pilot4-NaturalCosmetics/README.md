@@ -7,7 +7,7 @@ The deliverable D4.3 (Models and Tools for Predictive Analytics over Extremely L
 We investigate how the biological activity depends on the location of the vineyard, the agriculture practices followed, the extraction method used, and the variety of the grape. The collected data from the natural cosmetics pilot will provide the necessary information for the evaluation of the quality of each sample, linked with the special characteristics of the vineyard of origin. Particularly, we developed a solution that uses relevant properties of the biological efficacy and correlates them with vegetation indexes derived from earth observations obtained from satellite imagery systems. 
 
 
-#### Price Prediction API
+#### Analytics API
 
 To start the API execute: 
 
