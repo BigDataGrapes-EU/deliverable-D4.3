@@ -1,5 +1,5 @@
 
-# H2020 RIA BigDataGrapes (T4.3) - Pilot 5 - Price Prediction (with Time-Series Uncertainty version)
+# H2020 RIA BigDataGrapes (T4.3) - Pilot 5 - Price Prediction (with Time-Series Uncertainty)
 
 The deliverable D4.3 (Models and Tools for Predictive Analytics over Extremely Large Datasets) describes the mechanisms and tools supporting efficient and effective predictive data analytics over the BigDataGrapes (BDG) platform in the context of grapevine-related assets.
 
