@@ -70,3 +70,19 @@ services:
       - 8088:8088
     environment:
       - NAMENODE_HOST=namenode
+
+  git-sync:
+    image: openweb/git-sync:0.0.1
+    environment:
+      GIT_SYNC_REPO: "https://github.com/BigDataGrapes-EU/deliverable-D4.3.git"
+      GIT_SYNC_DEST: "/git"
+      GIT_SYNC_BRANCH: "master"
+      GIT_SYNC_REV: "FETCH_HEAD"
+      GIT_SYNC_WAIT: "10"
+    restart: always
+
+  price-prediction:
+    build: ./volume-data/spark-master-notebook/notebooks/Pilot5-FoodProtection/PricePrediction
+    container_name: price-prediction
+    depends_on:
+      - git-sync
