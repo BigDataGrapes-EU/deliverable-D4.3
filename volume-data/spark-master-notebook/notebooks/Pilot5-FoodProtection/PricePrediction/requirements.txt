@@ -1,5 +1,5 @@
 cython
 tensorflow
 numpy==1.17.3
-Flask==1.1.2
+Flask==2.3.2
 Keras==2.2.5
